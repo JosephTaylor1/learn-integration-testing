@@ -1,0 +1,20 @@
+{
+  "name": "integration-test-practice",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0"
+  },
+  "devDependencies": {
+    "chalk": "^3.0.0",
+    "jest": "^25.1.0",
+    "jest-puppeteer": "^4.4.0",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "preset": "jest-puppeteer"
+}
