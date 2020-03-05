@@ -1,12 +1,19 @@
 let url = 'https://scribol.com/pop-culture/celebrities/keanu-reeves-oscars-flirtatious/?l=a';
-let page = await global.__BROWSER__.newPage();
-
+let timeout = 5000;
 
 describe('Api test', () => {
-    await page.goto(url);
+    let page;
+    beforeAll(async () => {
+        page = await global.__BROWSER__.newPage();
+        await page.goto(url);
+    }, timeout)
+
+    afterAll(async () => {
+        await page.close()
+    })
 
     it('Checks googletag', async () => {
-        const googletag = await page.evaluate(() => window.googletag.apiReady);
+        const googletag = await page.evaluate(() => googletag.apiReady)
         expect(googletag).toBeTruthy();
-    });
-}, 7000);
+    }, timeout);
+}, timeout);
