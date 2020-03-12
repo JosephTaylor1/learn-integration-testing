@@ -1,5 +1,5 @@
 let url = 'https://scribol.com/pop-culture/celebrities/keanu-reeves-oscars-flirtatious/?l=a';
-let timeout = 5000;
+let timeout = 8000;
 
 describe('Api test', () => {
     let page;
@@ -14,6 +14,11 @@ describe('Api test', () => {
 
     it('Checks googletag', async () => {
         const googletag = await page.evaluate(() => googletag.apiReady)
+        expect(googletag).toBeTruthy();
+    }, timeout);
+    it('Goes to next page and checks googletag', async () => {
+        const googletag = await page.evaluate(() => googletag.apiReady)
+        await page.click('div[class="nav-btn next-navigation-button"]')
         expect(googletag).toBeTruthy();
     }, timeout);
 }, timeout);
