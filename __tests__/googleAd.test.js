@@ -1,5 +1,5 @@
 let url = 'https://scribol.com/pop-culture/celebrities/keanu-reeves-oscars-flirtatious/?l=a';
-let timeout = 8000;
+let timeout = 10000;
 
 describe('Api test', () => {
     let page;
