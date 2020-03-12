@@ -14,5 +14,8 @@ describe('functions tests', () => {
     it('fetches the correct username', async () => {
         const data = await functions.fetchUser();
         expect(data.username).toEqual('Bret');
-    })
+    });
+    it('reverses a string', () => {
+        expect(functions.reverseString('Hello')).toEqual('olleH');
+    });
 });
