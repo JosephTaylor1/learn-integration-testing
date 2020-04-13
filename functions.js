@@ -8,6 +8,8 @@ const functions = {
         const reversedStr = str.split('').reverse().join('');
         return reversedStr;
     },
+    fetchApiData: (endpoint) => axios.get('https://jsonplaceholder.typicode.com/' + endpoint)
+        .then(res => res.data),
 }
 
 module.exports = functions;
