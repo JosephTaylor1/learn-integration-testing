@@ -1,15 +1,10 @@
 const axios = require('axios');
 
-const functions = {
-    add: (num1, num2) => num1 + num2,
+const apiCalls = {
     fetchUser: () => axios.get('https://jsonplaceholder.typicode.com/users/1')
         .then(response => response.data),
-    reverseString: str => {
-        const reversedStr = str.split('').reverse().join('');
-        return reversedStr;
-    },
     fetchApiData: (endpoint) => axios.get('https://jsonplaceholder.typicode.com/' + endpoint)
         .then(res => res.data),
-}
+};
 
-module.exports = functions;
+module.exports = apiCalls;
